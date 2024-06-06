@@ -1,0 +1,79 @@
+# Nombre del Proyecto: Alineamiento de secuencias 
+
+Fecha: 05 de junio del 2024
+Actualización: 05 de ¿junio del 2024
+
+**Participantes**:
+
+- Erika Ordoñez erikaog@lcg.unam.mx
+
+## Descripción del Problema
+
+Es un programa al que se le van a pasar dos archivos fasta para hacer la comparaciión de secuencias de aminoácidos. 
+
+## Especificación de Requisitos
+
+Requisitos funcionales
+
+- Requisito 1: Un archivo que contenga la secuencia de DNA a analizar en formato fasta. 
+
+- Requisito 2: Al ingresar el archivo, deberá copiar la ruta absoluta del mismo para que el programa pueda encontrarlo, siempre que los archivos no se encunentren en la misma sección que la que se encuentra parado.  
+
+Requisitos no funcionales
+
+- Requisito 1: Especificar la secuencia a analizar del archivo. 
+
+
+
+## Análisis y Diseño
+
+Para el análisis de datos, se toman en cuenta únicamente las letras ingresadas, ya sean estas mayúsculas o minúsculas, incluso letras que no correspondan a nucleótidos. El programa con la función 'upper' busca transformar todas las letras ingresadas por mayúsculas, además se creó un contador que de ingresar letras que no contenga el archivo, el contador no avanzará del número cero y por tanto imprime en pantalla un mensaje de error. El programa recibe archivos con cualquier nombre que exista, las únicas condiciones son que el archivo debe existir y se deberá ingresar la ruta absoluta del mismo para que el programa lo encuentre. En caso de no ser encontrado o que esté vacío, el programa imprimirá en pantalla dos mensajes de error respectivamente. Todo esto para finalmente imprimir a pantalla el conteo de nucleótidos en el archivo. 
+
+
+
+```
+# Logica del código
+
+1. Recibe el archivo que debe estar en el dispositivo, aclarando la ruta absoluta del mismo. De no ser así, entonces imprime un mensaje de error. 
+2. En caso de recibir un archivo vacío el programa también imprime a pantalla un mensaje de error. 
+3. En caso contrario, comienza a contrastar las secuencias de aminoácidos a partir de secuencias debases nitrogenadas: 
+        3.1 Recibe, si el usuario lo desea, una secuencia definida para encontrarse en el archivo a analizar.
+        3.2 De no recibir la especificación de las secuencias, enntonces el programa no se ejecuta e imprime un mensaje al usuario. 
+        3.3 En caso de recibir alguna letra que no sea un nucleótido, el programa imprime un mensaje de error. 
+        3.4 Puede buscar ocurrencias de una letra o muchas. 
+  Con estas ideas de valodación se construyen un conjunto de funciones para llevar a cabo, primero, parsear un secuencia apartir del archivo fasta, para posteriormente buscas las coincidencias pon una matríz de la que lo único de interés son las diagonales las que son de gran importancia. 
+```
+
+Formato del archivo input que recibe el programa, separa las secuencias, es decir, únicamente el orden de ácido nucléicos, obtiene a partir de estas, las secuencias complementarias, y posteriormente los aminoácidos. 
+
+#### Caso de uso: Separa las secuencias puras del archivo fasta, para contrastarla. 
+
+```
+         +---------------+
+         |   Usuario     |
+         +-------+-------+
+                 |
+                 | 1. Proporciona archivo de entrada en formato fasta 
+                 |aclarando su ruta absoluta.
+                 |2. (opcional) Especifica la    
+                 |secuencia de nucleótidos a buscar. 
+                 |
+                 v
+         +-------+-------+
+         |Eoncontrar
+         |  las 
+         !  secuencias|
+         +---------------+
+```
+
+- **Actor**: Usuario
+- **Descripción**: El actor proporciona un archivo de entrada y se contará el contenido de nucleótidos en el siempre que se encuentren en el archivo.
+- **Flujo principal**:
+
+	1. El programa recibe el archivo.
+	2. Se separan las herrameintas puestas sobre al paso del resto de.
+	3. Se imprime en pantalla la cantidad total de cada nucleótido. 
+	
+- **Flujos alternativos**:
+	- Si no se proporciona un archivo o si este no es el correcto, entonces el programa proporcionará un mensaje de error.
+        - Si los nucleótidos contenidos en el archivo no están, es decir, si el archivo está vacío o las letras especificadas no se encuentran.    
