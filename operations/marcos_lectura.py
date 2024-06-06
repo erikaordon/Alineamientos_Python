@@ -15,7 +15,7 @@ def coincidencias(secuencias_nucleotidos_1, secuencias_nucleotidos_2):
   if len(secuencias_nucleotidos_1) == len(secuencias_nucleotidos_2):
     # Calcula los codones de los 3 marcos de lectura de las secuencias originales llamando a su función.
     for frame in range(3):
-      frame_seq = codones(frame,[secuencias_nucleotidos_1,secuencias_nucleotidos_2])
+      frame_seq = codones(frame,[secuencias_nucleotidos_1, secuencias_nucleotidos_2])
       seq1 = Seq(frame_seq[0])
       seq2 = Seq(frame_seq[1])
       ploteo_comparacion(seq1.translate(),seq2.translate(),frame)

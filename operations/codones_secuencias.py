@@ -10,7 +10,7 @@ def codones(frame, secuencias):
         El valor que regresa la función una lista con las secuencias de nucleótidos.
     """
     codon_list = []
-    if isinstance(secuencias, frame):
+    if isinstance(secuencias, list):
         secuencias=", ".join(secuencias)
     secuencias = secuencias.split(", ")
     for secuencia in secuencias:
