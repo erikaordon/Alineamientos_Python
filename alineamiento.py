@@ -1,3 +1,29 @@
+'''
+NAME Alineamiento de la línnea de comandos 
+       
+
+VERSION 
+0.3      
+
+AUTHOR Erika Ordoñez
+        
+
+DESCRIPTION Toma dos secuencias de ácidos nucléicos, ambos en formato fasta. 
+Se utiliza un parse para este fin, de acuerdo a su nivel de similitud, se construye un heapmap que nos permite observarlo de una manera más gráfica.         
+
+USAGE
+
+    % python alineamiento.py [INPUT_FILE_1] [INPUT_FILE_1]
+    
+
+ARGUMENTS
+No recibe ninguno la función proncipal
+
+METHOD
+Se utilizaron librerias como argparser o matplotlib, Además, de preferencia que estén largo y yo esperen con el tiempo para provarme.
+        
+'''
+
 import argparse
 import re 
 from utils.file_io import read_dna_sequence
